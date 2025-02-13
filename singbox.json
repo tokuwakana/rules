@@ -1,0 +1,1080 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "output": "sing-box.log",
+    "timestamp": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "default_mode": "Rule",
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "external_ui_download_url": "https://git.repcz.link/github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
+      "external_ui_download_detour": "Proxy"
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "cloudflare",
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "Proxy"
+      },
+      {
+        "tag": "ali",
+        "address": "223.5.5.5",
+        "address_strategy": "ipv4_only",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      },
+      {
+        "tag": "remote_fakeip",
+        "address": "fakeip"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Direct",
+        "action": "route",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "action": "route",
+        "server": "cloudflare"
+      },
+      {
+        "rule_set": [
+          "GeoSite@CN",
+          "Apple"
+        ],
+        "action": "route",
+        "server": "ali"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "action": "route",
+        "server": "remote_fakeip"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "independent_cache": true,
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7080,
+      "set_system_proxy": false
+    },
+    {
+      "type": "tun",
+      "tag": "tun",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7080
+        }
+      },
+      "stack": "mixed",
+      "auto_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "Proxy",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct",
+        "剩余流量：49.99 GB",
+        "距离下次重置剩余：21 天",
+        "套餐到期：2026-08-06",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "台湾1",
+        "台湾2",
+        "台湾3",
+        "台湾4",
+        "加拿大1",
+        "加拿大2",
+        "韩国1",
+        "韩国2",
+        "泰国1",
+        "泰国2",
+        "英国1",
+        "英国2",
+        "菲律宾1",
+        "菲律宾2",
+        "缅甸1",
+        "缅甸2",
+        "Trojan-香港1 | 低倍率",
+        "Trojan-新加坡1 | 低倍率",
+        "Trojan-日本1 | 低倍率",
+        "Trojan-台湾1 | 低倍率",
+        "Trojan-美国1 | 低倍率",
+        "Trojan-加拿大1 | 低倍率",
+        "Trojan-香港2 | 低倍率",
+        "Trojan-新加坡2 | 低倍率",
+        "Trojan-日本2 | 低倍率",
+        "Trojan-美国2 | 低倍率",
+        "Trojan-台湾2 | 低倍率",
+        "Trojan-加拿大2 | 低倍率"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "AI",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Twitter",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Emby",
+      "type": "selector",
+      "outbounds": [
+        "Proxy",
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct",
+        "剩余流量：49.99 GB",
+        "距离下次重置剩余：21 天",
+        "套餐到期：2026-08-06",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "台湾1",
+        "台湾2",
+        "台湾3",
+        "台湾4",
+        "加拿大1",
+        "加拿大2",
+        "韩国1",
+        "韩国2",
+        "泰国1",
+        "泰国2",
+        "英国1",
+        "英国2",
+        "菲律宾1",
+        "菲律宾2",
+        "缅甸1",
+        "缅甸2",
+        "Trojan-香港1 | 低倍率",
+        "Trojan-新加坡1 | 低倍率",
+        "Trojan-日本1 | 低倍率",
+        "Trojan-台湾1 | 低倍率",
+        "Trojan-美国1 | 低倍率",
+        "Trojan-加拿大1 | 低倍率",
+        "Trojan-香港2 | 低倍率",
+        "Trojan-新加坡2 | 低倍率",
+        "Trojan-日本2 | 低倍率",
+        "Trojan-美国2 | 低倍率",
+        "Trojan-台湾2 | 低倍率",
+        "Trojan-加拿大2 | 低倍率"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "Final",
+      "type": "selector",
+      "outbounds": [
+        "Proxy",
+        "🇭🇰 HongKong",
+        "🇺🇸 United States",
+        "🇸🇬 Singapore",
+        "🇯🇵 Japan",
+        "🇨🇳 Taiwan",
+        "direct",
+        "剩余流量：49.99 GB",
+        "距离下次重置剩余：21 天",
+        "套餐到期：2026-08-06",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "台湾1",
+        "台湾2",
+        "台湾3",
+        "台湾4",
+        "加拿大1",
+        "加拿大2",
+        "韩国1",
+        "韩国2",
+        "泰国1",
+        "泰国2",
+        "英国1",
+        "英国2",
+        "菲律宾1",
+        "菲律宾2",
+        "缅甸1",
+        "缅甸2",
+        "Trojan-香港1 | 低倍率",
+        "Trojan-新加坡1 | 低倍率",
+        "Trojan-日本1 | 低倍率",
+        "Trojan-台湾1 | 低倍率",
+        "Trojan-美国1 | 低倍率",
+        "Trojan-加拿大1 | 低倍率",
+        "Trojan-香港2 | 低倍率",
+        "Trojan-新加坡2 | 低倍率",
+        "Trojan-日本2 | 低倍率",
+        "Trojan-美国2 | 低倍率",
+        "Trojan-台湾2 | 低倍率",
+        "Trojan-加拿大2 | 低倍率"
+      ],
+      "default": "direct",
+      "interrupt_exist_connections": true
+    },
+    {
+      "tag": "🇭🇰 HongKong",
+      "type": "urltest",
+      "outbounds": [
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "Trojan-香港1 | 低倍率",
+        "Trojan-香港2 | 低倍率"
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "10m",
+      "tolerance": 0,
+      "interrupt_exist_connections": false
+    },
+    {
+      "tag": "🇺🇸 United States",
+      "type": "urltest",
+      "outbounds": [
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "Trojan-美国1 | 低倍率",
+        "Trojan-美国2 | 低倍率"
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "10m",
+      "tolerance": 0,
+      "interrupt_exist_connections": false
+    },
+    {
+      "tag": "🇸🇬 Singapore",
+      "type": "urltest",
+      "outbounds": [
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "Trojan-新加坡1 | 低倍率",
+        "Trojan-新加坡2 | 低倍率"
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "10m",
+      "tolerance": 0,
+      "interrupt_exist_connections": false
+    },
+    {
+      "tag": "🇯🇵 Japan",
+      "type": "urltest",
+      "outbounds": [
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "Trojan-日本1 | 低倍率",
+        "Trojan-日本2 | 低倍率"
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "10m",
+      "tolerance": 0,
+      "interrupt_exist_connections": false
+    },
+    {
+      "tag": "🇨🇳 Taiwan",
+      "type": "urltest",
+      "outbounds": [
+        "台湾1",
+        "台湾2",
+        "台湾3",
+        "台湾4",
+        "Trojan-台湾1 | 低倍率",
+        "Trojan-台湾2 | 低倍率"
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "10m",
+      "tolerance": 0,
+      "interrupt_exist_connections": false
+    },
+    {
+      "tag": "剩余流量：49.99 GB",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50001,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "距离下次重置剩余：21 天",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50001,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "套餐到期：2026-08-06",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50001,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "香港1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50001,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "香港2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50002,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "香港3",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50003,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "香港4",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50004,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "新加坡1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50005,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "新加坡2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50006,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "新加坡3",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50007,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "新加坡4",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50008,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "日本1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50009,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "日本2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50010,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "日本3",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50011,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "日本4",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50012,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "美国1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50013,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "美国2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50014,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "美国3",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50015,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "美国4",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50016,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "台湾1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50017,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "台湾2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50018,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "台湾3",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50019,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "台湾4",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50020,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "加拿大1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50021,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "加拿大2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50022,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "韩国1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50025,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "韩国2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50026,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "泰国1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50031,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "泰国2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50032,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "英国1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50023,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "英国2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50024,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "菲律宾1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50027,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "菲律宾2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50028,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "缅甸1",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50029,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "缅甸2",
+      "type": "shadowsocks",
+      "server": "tc.teacat2.xyz",
+      "server_port": 50030,
+      "method": "aes-128-gcm",
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305"
+    },
+    {
+      "tag": "Trojan-香港1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tchk1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-新加坡1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcsg1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-日本1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcjp1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-台湾1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tctw1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-美国1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcus1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-加拿大1 | 低倍率",
+      "type": "trojan",
+      "server": "cc.rk1.node-is.green",
+      "server_port": 10116,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcca1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-香港2 | 低倍率",
+      "type": "trojan",
+      "server": "b5cd448d17452d4d886274fdeda38352.lh.gtm.node-is.green",
+      "server_port": 49891,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tchk1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-新加坡2 | 低倍率",
+      "type": "trojan",
+      "server": "eb58abda29804f3bf7ed856f608f3edd.lh.gtm.node-is.green",
+      "server_port": 45820,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcsg1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-日本2 | 低倍率",
+      "type": "trojan",
+      "server": "fe33db863921bbd5c5b9c3b128d83a9f.lh.gtm.node-is.green",
+      "server_port": 46197,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcjp1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-美国2 | 低倍率",
+      "type": "trojan",
+      "server": "59fcee4e9926d00386ff5a6b5c554eae.lh.gtm.node-is.green",
+      "server_port": 48868,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcus1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-台湾2 | 低倍率",
+      "type": "trojan",
+      "server": "1c998fb1ba9c1d905b640c128dcae537.lh.gtm.node-is.green",
+      "server_port": 49349,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tctw1.bilibili.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "Trojan-加拿大2 | 低倍率",
+      "type": "trojan",
+      "server": "ca1cdc18e289435f920fc886a9462297.lh.gtm.node-is.green",
+      "server_port": 40224,
+      "password": "4cb19164-70f7-4be8-a23f-9fd02f8a2305",
+      "tls": {
+        "enabled": true,
+        "server_name": "tcca1.bilibili.com",
+        "insecure": true
+      }
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "Ads",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Ads_SukkaW.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "YouTube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/YouTube.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Microsoft.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "OneDrive",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/OneDrive.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Github.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "AppleProxy",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/AppleProxy.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "AI",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "Emby",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Repcz/Tool/raw/X/sing-box/Rules/Emby.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "GeoSite@CN",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "GeoIP@CN",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/github.com/Loyalsoldier/geoip/raw/release/srs/cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://git.repcz.link/raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-geolocation-!cn.srs",
+        "download_detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "clash_mode": "Direct",
+        "action": "route",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "action": "route",
+        "outbound": "Proxy"
+      },
+      {
+        "rule_set": [
+          "Ads"
+        ],
+        "action": "reject"
+      },
+      {
+        "rule_set": [
+          "AI"
+        ],
+        "action": "route",
+        "outbound": "AI"
+      },
+      {
+        "rule_set": [
+          "YouTube",
+          "Google"
+        ],
+        "action": "route",
+        "outbound": "Google"
+      },
+      {
+        "rule_set": [
+          "Microsoft",
+          "OneDrive",
+          "Github"
+        ],
+        "action": "route",
+        "outbound": "Microsoft"
+      },
+      {
+        "rule_set": [
+          "Twitter"
+        ],
+        "action": "route",
+        "outbound": "Twitter"
+      },
+      {
+        "rule_set": [
+          "Telegram"
+        ],
+        "action": "route",
+        "outbound": "Telegram"
+      },
+      {
+        "rule_set": [
+          "Emby"
+        ],
+        "action": "route",
+        "outbound": "Emby"
+      },
+      {
+        "rule_set": [
+          "AppleProxy"
+        ],
+        "action": "route",
+        "outbound": "🇭🇰 HongKong"
+      },
+      {
+        "rule_set": [
+          "GeoSite@CN",
+          "GeoIP@CN",
+          "Apple"
+        ],
+        "action": "route",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geolocation-!cn"
+        ],
+        "action": "route",
+        "outbound": "Proxy"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "find_process": false,
+    "auto_detect_interface": true,
+    "final": "Final"
+  }
+}
