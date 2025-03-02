@@ -1,58 +1,60 @@
-#NAME:Direct+
-DOMAIN-SUFFIX,b.lnk0.com
-DOMAIN-SUFFIX,pinduoduo.com
-DOMAIN-SUFFIX,yangkeduo.com
-DOMAIN-SUFFIX,myunidays.uk
-DOMAIN,ad.12306.cn
-DOMAIN,gg.caixin.com
-DOMAIN,sdkapp.uve.weibo.com
-DOMAIN-SUFFIX,ucweb.com
-DOMAIN-SUFFIX,kuwo.cn
-DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
-DOMAIN-SUFFIX,update.microsoft.com
-DOMAIN-SUFFIX,windowsupdate.com
-DOMAIN-SUFFIX,windowsupdate.microsoft.com
-DOMAIN,download.microsoft.com
-DOMAIN,wustat.windows.com
-DOMAIN,ntservicepack.microsoft.com
+# 名称: 直连修正
 
+payload:
+  # DST-PORT
+  - DST-PORT,123
 
-DOMAIN-SUFFIX,8008205555.cn
-DOMAIN-SUFFIX,8008205555.com
-DOMAIN-SUFFIX,bbf.org.cn
-DOMAIN-SUFFIX,bjsbnet.com
-DOMAIN-SUFFIX,chndoi.cn
-DOMAIN-SUFFIX,chndoi.com
-DOMAIN-SUFFIX,chndoi.com.cn
-DOMAIN-SUFFIX,chndoi.net
-DOMAIN-SUFFIX,chndoi.org
-DOMAIN-SUFFIX,cignacmb-ipmi.com
-DOMAIN-SUFFIX,cignacmb.com
-DOMAIN-SUFFIX,cignacmbamc.com
-DOMAIN-SUFFIX,cmb-leasing.com
-DOMAIN-SUFFIX,cmbchina.biz
-DOMAIN-SUFFIX,cmbchina.cn
-DOMAIN-SUFFIX,cmbchina.com
-DOMAIN-SUFFIX,cmbi.com.hk
-DOMAIN-SUFFIX,cmbimg.cn
-DOMAIN-SUFFIX,cmbimg.com
-DOMAIN-SUFFIX,cmbt.cn
-DOMAIN-SUFFIX,cmbuat.com
-DOMAIN-SUFFIX,cmburl.cn
-DOMAIN-SUFFIX,cmbwinglungbank.com
-DOMAIN-SUFFIX,cmf.biz
-DOMAIN-SUFFIX,cmf.ltd
-DOMAIN-SUFFIX,cmfchina.com
-DOMAIN-SUFFIX,cmfunds.cn
-DOMAIN-SUFFIX,cnki.net
-DOMAIN-SUFFIX,cnkidoi.cn
-DOMAIN-SUFFIX,cnkidoi.com
-DOMAIN-SUFFIX,cnkidoi.net
-DOMAIN-SUFFIX,cnkidoi.org
-DOMAIN-SUFFIX,test-cignacmb.com
-DOMAIN-SUFFIX,wuxizazhi.cn
-DOMAIN-SUFFIX,wuxizazhi.com
-DOMAIN-SUFFIX,wuxizazhi.com.cn
-DOMAIN-SUFFIX,wuxizazhi.net
-DOMAIN-SUFFIX,wuxizazhi.net.cn
+  # DOMAIN
+  - DOMAIN,gst.prod.dl.playstation.net
+  - DOMAIN,linux.do
+  - DOMAIN,ottsdk.itv.video
+  - DOMAIN,mihomos.us.kg
 
+  # DOMAIN-SUFFIX
+  - DOMAIN-SUFFIX,alice.ws
+  - DOMAIN-SUFFIX,apple-dns.cn
+  - DOMAIN-SUFFIX,archive.org
+  - DOMAIN-SUFFIX,coverartarchive.org
+  - DOMAIN-SUFFIX,cocopilot.org
+  - DOMAIN-SUFFIX,czzyvideo.com
+  - DOMAIN-SUFFIX,ghp.ci
+  - DOMAIN-SUFFIX,icloud.com.cn
+  - DOMAIN-SUFFIX,iqiyis.com
+  - DOMAIN-SUFFIX,istoreos.com
+  - DOMAIN-SUFFIX,kelee.one
+  - DOMAIN-SUFFIX,mihomos.us.kg
+  - DOMAIN-SUFFIX,musicbrainz.org
+  - DOMAIN-SUFFIX,ntp.org
+  - DOMAIN-SUFFIX,oaifree.com
+  - DOMAIN-SUFFIX,quickconnect.to
+  - DOMAIN-SUFFIX,speedtest.cn
+  - DOMAIN-SUFFIX,steamcontent.com
+  - DOMAIN-SUFFIX,synology.com
+  - DOMAIN-SUFFIX,cloudstudio.work
+  - DOMAIN-SUFFIX,follow.is
+  - DOMAIN-SUFFIX,cloudstudio.work
+  - DOMAIN-SUFFIX,ngrok-free.app
+  - DOMAIN-SUFFIX,gradio.live
+  - DOMAIN-SUFFIX,vscode-cdn.net
+  - DOMAIN-SUFFIX,openrouter.ai
+  
+  # PROCESS-NAME
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,CloudflareWARP
+  - PROCESS-NAME,DownloadService
+  - PROCESS-NAME,fdm
+  - PROCESS-NAME,Folx
+  - PROCESS-NAME,naive
+  - PROCESS-NAME,NetTransport
+  - PROCESS-NAME,p4pclient
+  - PROCESS-NAME,privoxy
+  - PROCESS-NAME,qbittorrent
+  - PROCESS-NAME,Surge
+  - PROCESS-NAME,Thunder
+  - PROCESS-NAME,trojan
+  - PROCESS-NAME,trojan-go
+  - PROCESS-NAME,Transmission
+  - PROCESS-NAME,uTorrent
+  - PROCESS-NAME,v2ray
+  - PROCESS-NAME,WebTorrent
+  - PROCESS-NAME,zerotier-one
