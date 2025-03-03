@@ -1,3 +1,5 @@
+#代理修正
+#DOMAIN
 DOMAIN,raw.githubusercontent.com
 DOMAIN,twc.trafficmanager.net
 DOMAIN,teacat.cloud
@@ -33,6 +35,7 @@ DOMAIN,index.docker.io
 DOMAIN,sub.yyzzlink.top
 DOMAIN,blog.skk.moe
 DOMAIN,proxy-tutorials.dustinwin.top
+#DOMAIN-SUFFIX
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,400808.xyz
 DOMAIN-SUFFIX,861000.xyz
@@ -44,6 +47,7 @@ DOMAIN-SUFFIX,haiwaikan.com
 DOMAIN-SUFFIX,cdctel.com
 DOMAIN-SUFFIX,naifei.pro
 DOMAIN-SUFFIX,docker.com
+#DOMAIN-KEYWORD
 DOMAIN-KEYWORD,rsshub
 DOMAIN-KEYWORD,railway
 DOMAIN-KEYWORD,dytt8
