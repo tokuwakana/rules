@@ -1,6 +1,6 @@
- payload: 
 #代理修正
-#  - DOMAIN
+ payload: 
+#DOMAIN
   - DOMAIN,raw.githubusercontent.com
   - DOMAIN,teacat.cloud
   - DOMAIN,frp.104300.xyz
@@ -23,7 +23,7 @@
   - DOMAIN,blog.skk.moe
   - DOMAIN,proxy-tutorials.dustinwin.top
   - DOMAIN,www.qichiyu.com
-#  - DOMAIN-SUFFIX
+#DOMAIN-SUFFIX
   - DOMAIN-SUFFIX,missav.com
   - DOMAIN-SUFFIX,400808.xyz
   - DOMAIN-SUFFIX,861000.xyz
@@ -36,7 +36,7 @@
   - DOMAIN-SUFFIX,naifei.pro
   - DOMAIN-SUFFIX,docker.com
   - DOMAIN-SUFFIX,rbxcdn.com
-#  - DOMAIN-KEYWORD
+#DOMAIN-KEYWORD
   - DOMAIN-KEYWORD,rsshub
   - DOMAIN-KEYWORD,railway
   - DOMAIN-KEYWORD,dytt8
