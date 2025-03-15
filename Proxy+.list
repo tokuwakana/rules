@@ -2,7 +2,6 @@
 #DOMAIN
 DOMAIN,raw.githubusercontent.com
 DOMAIN,teacat.cloud
-DOMAIN,frp.104300.xyz
 DOMAIN,sub.v1.mk
 DOMAIN,translate.googleapis.com
 DOMAIN,img.killcovid2021.com
@@ -10,21 +9,16 @@ DOMAIN,91porn.com
 DOMAIN,haijiao.com
 DOMAIN,wallhaven.cc
 DOMAIN,www.dljpt.xyz
-DOMAIN,pccmc.org
-DOMAIN,app.adjust.world
-DOMAIN,mdmc.cdmmc.org
-DOMAIN,diag.pwlt.me
-DOMAIN,m.chptdl.org
 DOMAIN,wiki.metacubex.one
 DOMAIN,api.ipify.org
 DOMAIN,api.ip.sb
-DOMAIN,index.docker.io
 DOMAIN,blog.skk.moe
 DOMAIN,proxy-tutorials.dustinwin.top
 #DOMAIN-SUFFIX
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,400808.xyz
 DOMAIN-SUFFIX,861000.xyz
+DOMAIN-SUFFIX,104300.xyz
 DOMAIN-SUFFIX,doubanio.com
 DOMAIN-SUFFIX,kin6c1.com
 DOMAIN-SUFFIX,iz8qkg.com
@@ -45,6 +39,8 @@ DOMAIN-KEYWORD,cloudflare
 DOMAIN-KEYWORD,githubusercontent
 DOMAIN-KEYWORD,roblox
 DOMAIN-KEYWORD,1e100
+DOMAIN-KEYWORD,chptdl
+DOMAIN-KEYWORD,potato
 # 国外DNS
 DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
@@ -64,3 +60,7 @@ IP-CIDR,1.0.0.1/32,no-resolve
 IP-CIDR,185.222.222.222/32,no-resolve
 IP-CIDR,208.67.222.222/32,no-resolve
 IP-CIDR,208.67.220.220/32,no-resolve
+
+IP-CIDR,13.251.24.0/24,no-resolve
+IP-CIDR,13.251.41.0/24,no-resolve
+IP-CIDR,17.252.156.0/23,no-resolve
