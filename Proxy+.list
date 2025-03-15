@@ -1,5 +1,6 @@
 #代理修正
 #DOMAIN
+DOMAIN,lens.l.google.com
 DOMAIN,raw.githubusercontent.com
 DOMAIN,teacat.cloud
 DOMAIN,sub.v1.mk
