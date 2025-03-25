@@ -38,7 +38,6 @@ rules:
   - IP-CIDR,95.161.76.100/31,REJECT-DROP,no-resolve
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,fix-proxy,Proxy
-  - RULE-SET,fix-direct,DIRECT
   - RULE-SET,apple_domain,DIRECT
   - RULE-SET,github_domain,Proxy
   - RULE-SET,instagram_domain,Proxy
@@ -59,7 +58,6 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
   fix-proxy: {!!merge <<: *class, url: "https://raw.githubusercontent.com/tokuwakana/rules/refs/heads/main/Proxy%2B.list"}
-  fix-direct: {!!merge <<: *class, url: "https://raw.githubusercontent.com/tokuwakana/rules/refs/heads/main/Direct%2B.list"}
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list"}
   ai: {!!merge <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.list"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"}
