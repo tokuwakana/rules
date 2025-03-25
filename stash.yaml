@@ -1,0 +1,79 @@
+mode: rule
+log-level: info
+allow-lan: true
+mixed-port: 7890
+external-controller: 127.0.0.1:9090
+profile:
+  store-selected: true
+  store-fake-ip: true
+# DNS模块
+dns:
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fake-ip-filter:
+    - '*'
+    - +.lan
+    - +.local
+proxy-providers:
+  Subscribe:
+    url: 订阅链接
+    interval: 86400
+    benchmark-url: http://cp.cloudflare.com
+    benchmark-timeout: 5
+# 分流分组
+proxy-groups:
+  - {name: Proxy, type: select, proxies: [Auto-Urltest, Manual, DIRECT], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png"}
+  - {name: Manual, type: select, include-all: true, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png", lazy: true}
+  - {name: OpenAI, type: select, proxies: [Manual, Auto-Urltest, DIRECT], icon: "https://raw.githubusercontent.com/sunfing/iNg/main/Icons/GeneralIcons/OpenAI1.png"}
+  - {name: Streaming, type: select, proxies: [Auto-Urltest, Manual, DIRECT], icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png"}
+  - {name: Final, type: select, proxies: [DIRECT, Auto-Urltest, Manual], icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png"}
+  - {name: Auto-Urltest, type: url-test, include-all: true, tolerance: 20, interval: 300, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
+rules:
+  - DOMAIN,cloudflare-dns.com,REJECT
+  - SCRIPT,quic,REJECT
+  - IP-CIDR,95.161.76.100/31,REJECT-DROP,no-resolve
+  - RULE-SET,private_ip,DIRECT,no-resolve
+  - RULE-SET,fix-proxy,Proxy
+  - RULE-SET,fix-direct,DIRECT
+  - RULE-SET,apple_domain,DIRECT
+  - RULE-SET,github_domain,Proxy
+  - RULE-SET,instagram_domain,Proxy
+  - RULE-SET,ai,OpenAI
+  - RULE-SET,youtube_domain,Streaming
+  - RULE-SET,google_domain,Proxy
+  - RULE-SET,telegram_domain,Proxy
+  - RULE-SET,geolocation-!cn,Proxy
+  - RULE-SET,google_ip,Proxy,no-resolve
+  - RULE-SET,telegram_ip,Proxy,no-resolve
+  - RULE-SET,cn_domain,DIRECT
+  - RULE-SET,cn_ip,DIRECT
+  - MATCH,Final
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: text}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: text}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers:
+  fix-proxy: {!!merge <<: *class, url: "https://raw.githubusercontent.com/tokuwakana/rules/refs/heads/main/Proxy%2B.list"}
+  fix-direct: {!!merge <<: *class, url: "https://raw.githubusercontent.com/tokuwakana/rules/refs/heads/main/Direct%2B.list"}
+  private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list"}
+  ai: {!!merge <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.list"}
+  youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list"}
+  instagram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.list"}
+  google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list"}
+  github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.list"}
+  telegram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"}
+  apple_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"}
+  cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list"}
+  geolocation-!cn: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list"}
+  private_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list"}
+  cn_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list"}
+  google_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list"}
+  telegram_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list"}
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
