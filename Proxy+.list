@@ -7,7 +7,6 @@ DOMAIN,translate.googleapis.com
 DOMAIN,img.killcovid2021.com
 DOMAIN,91porn.com
 DOMAIN,haijiao.com
-DOMAIN,wallhaven.cc
 DOMAIN,www.dljpt.xyz
 DOMAIN,wiki.metacubex.one
 DOMAIN,api.ipify.org
@@ -16,6 +15,7 @@ DOMAIN,wiki.repcz.link
 DOMAIN,cp.cloudflare.com
 DOMAIN,proxy-tutorials.dustinwin.top
 #DOMAIN-SUFFIX
+DOMAIN-SUFFIX,wallhaven.cc
 DOMAIN-SUFFIX,skk.moe
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,400808.xyz
