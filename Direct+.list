@@ -1,12 +1,14 @@
 # 名称: 直连修正
-# DST-PORT
-#DST-PORT,123
 # DOMAIN
 DOMAIN,gst.prod.dl.playstation.net
-DOMAIN,linux.do
 DOMAIN,ottsdk.itv.video
-DOMAIN,mihomos.us.kg
+DOMAIN,rss.owo.nz
+DOMAIN,rss.owo.nz
+DOMAIN,rss.wudifeixue.com
 # DOMAIN-SUFFIX
+DOMAIN-SUFFIX,4820286.xyz
+DOMAIN-SUFFIX,linux.do
+DOMAIN-SUFFIX,chatwise.app
 DOMAIN-SUFFIX,alice.ws
 DOMAIN-SUFFIX,apple-dns.cn
 DOMAIN-SUFFIX,archive.org
@@ -24,7 +26,7 @@ DOMAIN-SUFFIX,ntp.org
 DOMAIN-SUFFIX,oaifree.com
 DOMAIN-SUFFIX,quickconnect.to
 DOMAIN-SUFFIX,speedtest.cn
-DOMAIN-SUFFIX,steamcontent.com 
+DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,synology.com
 DOMAIN-SUFFIX,cloudstudio.work
 DOMAIN-SUFFIX,follow.is
