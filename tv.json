@@ -135,5 +135,5 @@
   {"id":"xiaohys","name":"小紅影視","url":"https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/xiaohys.js","isEnabled":true},
   {"id":"jianpian","name":"荐片","url":"https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/jianpian.js","isEnabled":true},
   {"id":"rrmj","name":"人人","url":"https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/rrmj.js","isEnabled":true},
-  {"id":"anime1","name":"anime1","url":"https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/anime1.js","isEnabled":true},
+  {"id":"anime1","name":"anime1","url":"https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/anime1.js","isEnabled":true}
 ]
