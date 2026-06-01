@@ -1,6 +1,7 @@
 # OuonnkiTV 视频采集站直连规则
 # 配合 tv.json 使用，建议 RULE-SET,tv_sources,DIRECT
 # 放在 geolocation-!cn 规则之前
+# 共 52 条（自动生成）
 
 #360|点播
 DOMAIN,360zy.com
@@ -94,3 +95,7 @@ DOMAIN,cj.lzcaiji.com
 DOMAIN,360zyzz.com
 #索尼资源
 DOMAIN,suoniapi.com
+#最大资源
+DOMAIN,api.zuidapi.com
+#茅台采播
+DOMAIN,caiji.maotaizy.cc
