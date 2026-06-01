@@ -194,5 +194,17 @@
   {
     "name": "索尼资源",
     "url": "https://suoniapi.com/api.php/provide/vod/"
+  },
+  {
+    "name": "最大资源",
+    "url": "https://api.zuidapi.com/api.php/provide/vod/"
+  },
+  {
+    "name": "光速HTTP",
+    "url": "http://api.guangsuapi.com/api.php/provide/vod/"
+  },
+  {
+    "name": "茅台采播",
+    "url": "https://caiji.maotaizy.cc/api.php/provide/vod/"
   }
 ]
