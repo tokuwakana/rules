@@ -54,15 +54,3 @@ PROCESS-NAME,WebTorrent
 PROCESS-NAME,zerotier-one
 
 
-# TV采集站直连（延迟测试优化）
-DOMAIN,360zy.com
-DOMAIN,api.maoyanapi.top
-DOMAIN,caiji.maotaizy.cc
-DOMAIN,caiji.moduapi.cc
-DOMAIN,dbzy.tv
-DOMAIN,ffzy5.tv
-DOMAIN,iqiyizyapi.com
-DOMAIN,m3u8.apiyhzy.com
-DOMAIN,p2100.net
-DOMAIN,www.mdzyapi.com
-DOMAIN,www.moduzy.com
