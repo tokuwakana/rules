@@ -1,0 +1,260 @@
+[
+  {
+    "id": "baofeng",
+    "name": "暴风资源",
+    "url": "https://tvbox.400808.xyz/?url=https://bfzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "jisu",
+    "name": "极速资源",
+    "url": "https://tvbox.400808.xyz/?url=https://jszyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "tianya",
+    "name": "天涯资源",
+    "url": "https://tvbox.400808.xyz/?url=https://tyyszy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "guangsu",
+    "name": "光速资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.guangsuapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "baiduyun",
+    "name": "百度云资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.apibdzy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "hongniu",
+    "name": "红牛资源",
+    "url": "https://tvbox.400808.xyz/?url=https://www.hongniuzy2.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "wujin",
+    "name": "无尽资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.wujinapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "feifan",
+    "name": "非凡资源",
+    "url": "https://tvbox.400808.xyz/?url=https://ffzy5.tv/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "zuida",
+    "name": "最大资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.zuidapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "ruyi",
+    "name": "如意资源",
+    "url": "https://tvbox.400808.xyz/?url=https://cj.rycjapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "dytt",
+    "name": "电影天堂",
+    "url": "https://tvbox.400808.xyz/?url=https://caiji.dyttzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "sanliuling",
+    "name": "360资源",
+    "url": "https://tvbox.400808.xyz/?url=https://360zy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "jiangyu",
+    "name": "鲸鱼资源",
+    "url": "https://tvbox.400808.xyz/?url=https://jyzyapi.com/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "xinlang",
+    "name": "新浪资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "ikun",
+    "name": "iKun资源",
+    "url": "https://tvbox.400808.xyz/?url=https://ikunzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "aidan",
+    "name": "爱蛋资源",
+    "url": "https://tvbox.400808.xyz/?url=https://lovedan.net/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "lezi",
+    "name": "乐子资源",
+    "url": "https://tvbox.400808.xyz/?url=https://cj.lziapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "wujin2",
+    "name": "无尽ME",
+    "url": "https://tvbox.400808.xyz/?url=https://api.wujinapi.me/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "modu",
+    "name": "魔都资源",
+    "url": "https://tvbox.400808.xyz/?url=https://www.mdzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "feifanapi",
+    "name": "非凡API",
+    "url": "https://tvbox.400808.xyz/?url=https://api.ffzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "yaya",
+    "name": "丫丫点播",
+    "url": "https://tvbox.400808.xyz/?url=https://cj.yayazy.net/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "feifan1",
+    "name": "非凡线路1",
+    "url": "https://tvbox.400808.xyz/?url=https://ffzy1.tv/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "wujincc",
+    "name": "无尽CC",
+    "url": "https://tvbox.400808.xyz/?url=https://api.wujinapi.cc/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "wujinnet",
+    "name": "无尽NET",
+    "url": "https://tvbox.400808.xyz/?url=https://api.wujinapi.net/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "feifancj",
+    "name": "非凡采集",
+    "url": "https://tvbox.400808.xyz/?url=https://cj.ffzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "zuidame",
+    "name": "最大点播",
+    "url": "https://tvbox.400808.xyz/?url=https://zuidazy.me/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "moduzy",
+    "name": "魔都影视",
+    "url": "https://tvbox.400808.xyz/?url=https://www.moduzy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "yinghua",
+    "name": "樱花资源",
+    "url": "https://tvbox.400808.xyz/?url=https://m3u8.apiyhzy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "yilingba2",
+    "name": "1080JSON",
+    "url": "https://tvbox.400808.xyz/?url=https://api.1080zyku.com/inc/apijson.php",
+    "isEnabled": true
+  },
+  {
+    "id": "tianyazy",
+    "name": "天涯海角",
+    "url": "https://tvbox.400808.xyz/?url=https://tyyszyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "suoni",
+    "name": "索尼资源",
+    "url": "https://tvbox.400808.xyz/?url=https://suoniapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "huya",
+    "name": "虎牙资源",
+    "url": "https://tvbox.400808.xyz/?url=https://www.huyaapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "niuniu",
+    "name": "牛牛点播",
+    "url": "https://tvbox.400808.xyz/?url=https://api.niuniuzy.me/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "subo",
+    "name": "速博资源",
+    "url": "https://tvbox.400808.xyz/?url=https://subocaiji.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "shandian",
+    "name": "閃電资源",
+    "url": "https://tvbox.400808.xyz/?url=https://sdzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "hongniu3",
+    "name": "红牛资源3",
+    "url": "https://tvbox.400808.xyz/?url=https://www.hongniuzy3.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "maotai",
+    "name": "茅台资源",
+    "url": "https://tvbox.400808.xyz/?url=https://caiji.maotaizy.cc/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "suonisd",
+    "name": "索尼-闪电",
+    "url": "https://tvbox.400808.xyz/?url=https://xsd.sdzyapi.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "dbzy",
+    "name": "豆瓣资源",
+    "url": "https://tvbox.400808.xyz/?url=https://dbzy.tv/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "piaoling",
+    "name": "飘零资源",
+    "url": "https://tvbox.400808.xyz/?url=https://p2100.net/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "jinying",
+    "name": "金鹰点播",
+    "url": "https://tvbox.400808.xyz/?url=https://jinyingzy.com/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "modudongman",
+    "name": "魔都动漫",
+    "url": "https://tvbox.400808.xyz/?url=https://caiji.moduapi.cc/api.php/provide/vod",
+    "isEnabled": true
+  },
+  {
+    "id": "bubugao",
+    "name": "步步高资源",
+    "url": "https://tvbox.400808.xyz/?url=https://api.yparse.com/api/json",
+    "isEnabled": true
+  }
+]
